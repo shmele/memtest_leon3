@@ -1,0 +1,22 @@
+C:\opt\examples>sparc-elf-gcc -g -O2 -msoft-float my01.c -o my01.exe
+my01.c: In function `main':
+my01.c:15: error: `try' undeclared (first use in this function)
+my01.c:15: error: (Each undeclared identifier is reported only once
+my01.c:15: error: for each function it appears in.)
+my01.c:15: error: parse error before '{' token
+my01.c: At top level:
+my01.c:20: error: ISO C requires a named argument before `...'
+my01.c:27: error: parse error before "for"
+my01.c:40: error: ISO C requires a named argument before `...'
+my01.c:41: error: redefinition of 'catch'
+my01.c:21: error: previous definition of 'catch' was here
+my01.c: In function `catch':
+my01.c:43: error: `i' undeclared (first use in this function)
+my01.c: At top level:
+my01.c:49: error: parse error before '}' token
+my01.c:51: error: parse error before string constant
+my01.c:51: error: conflicting types for 'printf'
+my01.c:51: note: a parameter list with an ellipsis can't match an empty parameter name list declaration
+my01.c:51: error: conflicting types for 'printf'
+my01.c:51: note: a parameter list with an ellipsis can't match an empty parameter name list declaration
+my01.c:51: warning: data definition has no type or storage class
