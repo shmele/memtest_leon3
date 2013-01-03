@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 main()
@@ -9,17 +10,38 @@ main()
 
 	srand(time(NULL));
 
-	buf = malloc(bufsize);
+	try
+	{
+
+		buf = malloc(bufsize);
+
+	}
+	catch(...)
+	{
+
+		printf("Error memory allocation!");
+
+	}
 
 	for (i = 0; i < bufsize; i++)
 	{
 
-		if (rand() % 100 < 95)
-			buf[i] = 0xFF;
-		else
-			buf[i] = rand() % 0xFE;
 
-		//printf("%d\t%X\n", i, buf[i]);
+		try
+		{
+
+			if (rand() % 100 < 95)
+				buf[i] = 0xFF;
+			else
+				buf[i] = rand() % 0xFE;
+
+		}
+		catch(...)
+		{
+
+			printf("Error write to %d byte!", i);
+
+		}
 
 	}
 
@@ -29,10 +51,7 @@ main()
 	{
 
 		if (buf[i] != 0xFF)
-			printf("Byte %d is - BAD.\n", i);
-		else
-			//printf("Byte %d is - OK.\n", i);
-			printf("");
+			printf("Byte %d is - %X BAD.\n", i, buf[i]);
 
 
 	}
